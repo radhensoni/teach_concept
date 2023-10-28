@@ -1,5 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:teach_concept/ex_color_animation.dart';
 import 'package:teach_concept/ex_container.dart';
+import 'package:teach_concept/ex_datatable.dart';
+import 'package:teach_concept/ex_gridview.dart';
+import 'package:teach_concept/ex_listview.dart';
+import 'package:teach_concept/ex_rangeSlider.dart';
+import 'package:teach_concept/ex_tabbar.dart';
+import 'package:teach_concept/ex_webview.dart';
+
+import 'ex_image.dart';
+import 'ex_slider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,7 +42,9 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: ExampleContainer(),
+      home: const MyHomePage(
+        title: "Home",
+      ),
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -107,12 +119,131 @@ class _MyHomePageState extends State<MyHomePage> {
           // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+            const SizedBox(
+              height: 20,
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const EXImage(),
+                  ),
+                );
+              },
+              child: const Text('Image'),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ExDataTable(),
+                  ),
+                );
+              },
+              child: const Text('Data table'),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const EXGridView(),
+                  ),
+                );
+              },
+              child: const Text('Grid view'),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => EXListView(),
+                  ),
+                );
+              },
+              child: const Text('List view'),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ExSliderWidget(),
+                  ),
+                );
+              },
+              child: const Text('Slider'),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const EXRangeSliderWidget(),
+                  ),
+                );
+              },
+              child: const Text('Range Slider'),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => EXWebView(),
+                  ),
+                );
+              },
+              child: const Text('webview'),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => EXTabbar(),
+                  ),
+                );
+              },
+              child: const Text('Tabbar'),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => EXColorAnimation(),
+                  ),
+                );
+              },
+              child: const Text('color animation'),
             ),
           ],
         ),
